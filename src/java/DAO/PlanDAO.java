@@ -19,7 +19,7 @@ public class PlanDAO {
         this.connection = JDBC.getConnection();
     }
 
-    // Create
+    
     public void addPlan(Plan plan) throws SQLException {
         String sql = "INSERT INTO Plans (plname, startdate, enddate, did, statusid, eid) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
