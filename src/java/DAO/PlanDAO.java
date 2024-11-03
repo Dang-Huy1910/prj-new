@@ -168,7 +168,6 @@ public class PlanDAO {
         return plans;
     }
 
-    // Update
     public void updatePlan(Plan plan) throws SQLException {
         String sql = "UPDATE Plans SET plname = ?, startdate = ?, enddate = ?, did = ?, statusid = ?, eid = ? WHERE plid = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -183,7 +182,6 @@ public class PlanDAO {
         }
     }
 
-    // Delete
     public void deletePlan(int plid) throws SQLException {
         String sql = "DELETE FROM Plans WHERE plid = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -191,7 +189,6 @@ public class PlanDAO {
             statement.executeUpdate();
         }
     }
-        // Update
     public void updatePlanStaus(int status,int plid) throws SQLException {
         String sql = "UPDATE Plans SET statusid = ?WHERE plid = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
